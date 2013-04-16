@@ -1,5 +1,9 @@
 package me.lilfade.faded;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.logging.Logger;
 
 import org.bukkit.ChatColor;
@@ -33,6 +37,21 @@ public class Faded extends JavaPlugin{
 			} else {
 				Player player = (Player) sender;
 				player.sendMessage(ChatColor.GOLD + "Sent");
+				player.sendMessage(ChatColor.AQUA + "Yourname: " + player.getName());
+				try {
+					URL fgURL = new URL("http://localhost/serverenable.php?cname=" + player.getName());
+					URLConnection fgURLConnection = fgURL.openConnection();
+					fgURLConnection.connect();
+				}
+				catch (MalformedURLException e) {
+					//new URL() failed
+					player.sendMessage(ChatColor.DARK_RED + "Url failed");
+				
+				}
+				catch (IOException e) {
+					// openCnnection() failed
+					player.sendMessage(ChatColor.DARK_RED + "open connection failed");
+				}
 			}
 			return true;
 		}
