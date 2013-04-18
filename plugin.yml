@@ -1,7 +1,4 @@
 name: Faded
 main: me.lilfade.faded.Faded
-version: 0.01
+version: 0.03
 description: Faded Plugin
-commands:
-  sendme:
-    description: send the player a message!
