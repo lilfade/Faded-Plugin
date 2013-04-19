@@ -22,7 +22,7 @@ public class FadedPlayerListener implements Listener {
             //player.setLevel(0);
             //player.setHealth(20);
             //player.setFoodLevel(1);
-        	Fadedhttp.sendGetRequest("http://fadedgaming.co/serverenable.php", "cname="+player.getName());
+        	Fadedhttp.sendGetRequest("http://fadedgaming.co/serverenable.php", "action=addplayer&player="+player.getName());
         } else {
         	//do nothing ... for now
         }        
