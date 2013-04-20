@@ -1,4 +1,12 @@
 name: Faded
 main: me.lilfade.faded.Faded
 version: 0.04
-description: Faded Plugin
+description: >
+             Faded plugin provides custom features on the game server
+author: lilfade
+
+commands:
+  bug:
+    description: report a bug
+  suggestion:
+    description: add a suggestion
