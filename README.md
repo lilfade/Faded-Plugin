@@ -8,6 +8,7 @@ On Initial join user gets a authcode for use on website to enable play on game s
 Usable Commands:
 
 /bug [bug report]
+
 /suggestion [suggestion]
 
 More Soon...
