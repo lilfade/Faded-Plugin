@@ -1,20 +1,33 @@
 package me.lilfade.faded;
 
-	import java.io.BufferedReader;
-	import java.io.IOException;
-	import java.io.InputStream;
-	import java.io.InputStreamReader;
-	import java.io.OutputStream;
-	import java.io.OutputStreamWriter;
-	import java.io.Reader;
-	import java.io.Writer;
-	import java.net.HttpURLConnection;
-	import java.net.ProtocolException;
-	import java.net.URL;
-	import java.net.URLConnection;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.io.Writer;
+import java.net.HttpURLConnection;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.net.URLConnection;
 
-	public class Fadedhttp
-	{
+public class FadedUtils {
+
+	//simply takes all the args from the message and seds it all as a string
+	public static String convertArgsToString(String[] args) {
+		StringBuilder buffer = new StringBuilder();
+		// change the starting i value to pick what argument to start from
+		// 1 is the 2nd argument.
+		buffer.append(args[0]);
+		for(int i = 1; i < args.length; i++){
+			buffer.append('_').append(args[i]);
+		}
+		// now buffer.toString() has your arguments separated by spaces.
+		return buffer.toString();
+	}
+	
 	/**
 	* Sends an HTTP GET request to a url
 	*
@@ -138,5 +151,4 @@ package me.lilfade.faded;
 		}
 		writer.flush();
 		}
-
-	}
+}

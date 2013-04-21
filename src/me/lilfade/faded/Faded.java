@@ -14,6 +14,7 @@ public class Faded extends JavaPlugin{
 	//	this.logger.info(pdfFile.getName() + " Version " + pdfFile.getVersion() + " Has been Enabled!");		
 		PluginManager manager = this.getServer().getPluginManager();
 		manager.registerEvents(new FadedPlayerListener(),  this);
+		getConfig().options().copyDefaults(true);
 	}
 	
 	@Override
@@ -24,12 +25,15 @@ public class Faded extends JavaPlugin{
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
 		Player player = (Player) sender;
+		
 		if(commandLabel.equalsIgnoreCase("bug")) {
-			//we got a bug here
-			player.sendMessage("bug sent");
+			//we got a bug here, store it in the db with who reported it
+			FadedUtils.sendGetRequest(getConfig().getString("http-server"), "action=addbug&player="+player.getName()+"&report="+FadedUtils.convertArgsToString(args));
+			player.sendMessage("Bug sent thanks for telling us about it!");
 		}else if(commandLabel.equalsIgnoreCase("suggestion")){
-			//we got a suggestion
-			player.sendMessage("suggestion sent");
+			//we got a suggestion, add it to the bd but say who its from as well 
+			FadedUtils.sendGetRequest(getConfig().getString("http-server"), "action=addsuggestion&player="+player.getName()+"&suggestion="+FadedUtils.convertArgsToString(args));
+			player.sendMessage("Suggestion sent thanks!");
 		}
 		return false;
 	}

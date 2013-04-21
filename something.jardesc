@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <jardesc>
-    <jar path="C:/Users/lilfade/Desktop/minecraft server 41213 - Copy (2)/plugins/faded.jar"/>
+    <jar path="C:/Users/lilfade/Desktop/Minecraft/plugins/faded.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/Faded-Plugin/something.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
@@ -16,5 +16,6 @@
         <file path="/Faded-Plugin/README.md"/>
         <file path="/Faded-Plugin/plugin.yml"/>
         <file path="/Faded-Plugin/.project"/>
+        <file path="/Faded-Plugin/config.yml"/>
     </selectedElements>
 </jardesc>
