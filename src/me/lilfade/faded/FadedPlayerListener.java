@@ -7,7 +7,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class FadedPlayerListener implements Listener {
-
+	Faded plugin;
+	
+	public FadedPlayerListener(Faded instance) {
+		plugin = instance;
+	}
+	
 	//gets new player event, and passes data to the webserver for pre-registration
 	@EventHandler(priority = EventPriority.HIGHEST)
     public void firstJoin(PlayerJoinEvent event) {
@@ -23,8 +28,8 @@ public class FadedPlayerListener implements Listener {
             //player.setFoodLevel(1);
         	
         	//use for remote
-        	FadedUtils.sendGetRequest("http://www.fadedgaming.co/serverenable.php", "action=addplayer&player="+player.getName());
-        	        	
+        	FadedUtils.sendGetRequest(plugin.getConfig().getString("http-server"), "action=addplayer&player="+player.getName());
+        		
         	//use for local
         	//Fadedhttp.sendGetRequest("http://localhost/FadedGaming-Website/uc/serverenable.php", "action=addplayer&player="+player.getName());
         } else {
