@@ -43,6 +43,9 @@ public class Faded extends JavaPlugin{
 			//we got a suggestion, add it to the bd but say who its from as well 
 			FadedUtils.sendGetRequest(getConfig().getString("http-server"), "action=addsuggestion&player="+player.getName()+"&suggestion="+FadedUtils.convertArgsToString(args));
 			player.sendMessage("Suggestion sent thanks!");
+		}else if(commandLabel.equalsIgnoreCase("bv")) {
+			//we got a suggestion, add it to the bd but say who its from as well 
+			player.sendMessage("Bukkit Version:" + getServer().getBukkitVersion());
 		}
 		return false;
 	}

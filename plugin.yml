@@ -10,3 +10,5 @@ commands:
     description: report a bug
   suggestion:
     description: add a suggestion
+  bv:
+    description: display bukkit version for debug
