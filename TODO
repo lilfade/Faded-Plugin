@@ -1,0 +1,8 @@
+messages.php:
+will recieve messages in a $_GET request once recieved will store in the db, will inform sender
+that we got the message
+
+if the reciever is online then inform them they have a message
+if not then let them know when they login next time
+
+message.php?action=checkmessage&player=playername

@@ -1,6 +1,6 @@
 name: Faded
 main: me.lilfade.faded.Faded
-version: 0.07
+version: 0.08.02
 description: >
              Faded plugin provides custom features on the game server
 author: lilfade
@@ -12,3 +12,5 @@ commands:
     description: add a suggestion
   bv:
     description: display bukkit version for debug
+  pm:
+    description: sent private message to player

@@ -28,12 +28,14 @@ public class FadedPlayerListener implements Listener {
             //player.setFoodLevel(1);
         	
         	//use for remote
-        	FadedUtils.sendGetRequest(plugin.getConfig().getString("http-server"), "action=addplayer&player="+player.getName());
+        	
+        	FadedUtils.sendGetRequest(plugin.getConfig().getString("http-server")+plugin.getConfig().getString("auth-page"), "action=addplayer&player="+player.getName());
         		
         	//use for local
         	//Fadedhttp.sendGetRequest("http://localhost/FadedGaming-Website/uc/serverenable.php", "action=addplayer&player="+player.getName());
         } else {
-        	//do nothing ... for now
+        	//user has logged on before
+        	//FadedUtils.sendGetRequest(plugin.getConfig().getString("http-server")+plugin.getConfig().getString("pm-page"), "action=checkmessage&player="+player.getName());
         }        
 	}
 }

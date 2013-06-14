@@ -15,7 +15,7 @@ import java.net.URLConnection;
 
 public class FadedUtils {
 
-	//simply takes all the args from the message and seds it all as a string
+	//simply takes all the args from the message and sends it all as a string
 	public static String convertArgsToString(String[] args) {
 		StringBuilder buffer = new StringBuilder();
 		// change the starting i value to pick what argument to start from
@@ -23,6 +23,19 @@ public class FadedUtils {
 		buffer.append(args[0]);
 		for(int i = 1; i < args.length; i++){
 			buffer.append('_').append(args[i]);
+		}
+		// now buffer.toString() has your arguments separated by spaces.
+		return buffer.toString();
+	}
+	
+	//same as above but for messages
+	public static String convertArgsToString1(String[] args) {
+		StringBuilder buffer = new StringBuilder();
+		// change the starting i value to pick what argument to start from
+		// 1 is the 2nd argument.
+		//buffer.append(args[0]);
+		for(int i = 1; i < args.length; i++){
+			buffer.append(' ').append(args[i]);
 		}
 		// now buffer.toString() has your arguments separated by spaces.
 		return buffer.toString();
